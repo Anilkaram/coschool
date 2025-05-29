@@ -29,36 +29,30 @@ body {
 }
 
 /* Header Styles */
-header {
+.header {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-decoration: none;
 }
 
-.logo-icon {
+.logo i {
   color: var(--secondary);
 }
 
-.nav-links {
+.navbar {
   display: flex;
   gap: 2rem;
 }
@@ -131,13 +125,11 @@ header {
   color: white;
   padding: 5rem 0;
   text-align: center;
-  margin-bottom: 3rem;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  font-weight: 700;
 }
 
 .hero p {
@@ -147,9 +139,9 @@ header {
   opacity: 0.9;
 }
 
-/* Courses Grid */
+/* Courses Section */
 .courses-section {
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 
 .section-title {
@@ -161,12 +153,6 @@ header {
   font-size: 2.2rem;
   color: var(--dark);
   margin-bottom: 1rem;
-}
-
-.section-title p {
-  color: var(--gray);
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .courses-grid {
@@ -193,19 +179,6 @@ header {
   background-color: var(--light-gray);
   background-size: cover;
   background-position: center;
-  position: relative;
-}
-
-.course-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: var(--secondary);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 2rem;
-  font-size: 0.8rem;
-  font-weight: 600;
 }
 
 .course-content {
@@ -215,29 +188,26 @@ header {
 .course-title {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: var(--dark);
 }
 
 .course-description {
   color: var(--gray);
   margin-bottom: 1.5rem;
-  font-size: 0.95rem;
 }
 
-.course-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.enroll-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.course-teacher {
-  font-size: 0.9rem;
-  color: var(--gray);
-}
-
-.course-teacher span {
-  color: var(--primary);
-  font-weight: 500;
+.enroll-btn:hover {
+  background-color: var(--primary-dark);
 }
 
 /* Modal Styles */
@@ -269,97 +239,36 @@ header {
   max-width: 450px;
   padding: 2rem;
   position: relative;
-  transform: translateY(-20px);
-  transition: transform 0.3s;
-}
-
-.modal.active .modal-content {
-  transform: translateY(0);
 }
 
 .close-btn {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: none;
-  border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--gray);
+  background: none;
+  border: none;
 }
 
-.modal-title {
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: var(--dark);
+/* Form Styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .form-group {
-  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
   font-weight: 500;
-  color: var(--dark);
 }
 
 .form-group input {
-  width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem;
   border: 1px solid var(--light-gray);
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: border-color 0.3s;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
-.modal-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-}
-
-/* User Info */
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--primary);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .nav-links {
-    gap: 1.5rem;
-  }
-  
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  
-  .courses-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-}
+  border-radius: 0.5
