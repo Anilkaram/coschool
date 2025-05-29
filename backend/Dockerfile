@@ -2,6 +2,7 @@
 FROM node:18-alpine as builder
 WORKDIR /app
 COPY package*.json ./
+COPY backend/ ./backend/
 RUN npm install --production
 COPY . .
 RUN npm run build
@@ -14,6 +15,7 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/backend ./backend
 
 RUN apk add --no-cache python3 make g++
+ENV NODE_ENV=production, DB_PATH=/data/coschool.db
 EXPOSE 3000
 CMD ["npm", "start"]  
 # This Dockerfile sets up a Node.js application using the official Node.js 18 Alpine image.
